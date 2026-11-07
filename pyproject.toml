@@ -1,0 +1,13 @@
+[project]
+name = "coverse-platform"
+version = "0.1.0"
+description = "Run and score vision-language models on the CoVerse benchmark"
+requires-python = ">=3.10"
+dependencies = ["datasets>=3.0", "openai>=1.40", "pillow", "pyyaml", "scipy"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["coverse_bench"]

@@ -1,0 +1,24 @@
+# Models coverse_bench.run can ask, one entry each. Any OpenAI-compatible endpoint works.
+#   base_url     the endpoint; ${VAR} is filled from the environment
+#   model_id     the name the endpoint knows the model by (default: the entry's name)
+#   api_key_env  environment variable holding the key (leave out for a local vLLM server)
+#   image_first  image before the prompt in the message (default false; set it for Claude models)
+#   params       request fields sent with every call (max_tokens, temperature, extra_body, ...)
+
+# A local vLLM server: `vllm serve Qwen/Qwen3-VL-8B-Instruct --served-model-name qwen`, VLLM_URL=http://localhost:8000/v1
+vllm:
+  base_url: ${VLLM_URL}
+  model_id: qwen
+  params: {max_tokens: 16000}
+
+# OpenRouter, low thinking.
+gemini-3-flash-low:
+  base_url: https://openrouter.ai/api/v1
+  model_id: google/gemini-3-flash-preview
+  api_key_env: OPENROUTER_API_KEY
+  params: {max_tokens: 10000, extra_body: {reasoning: {effort: low}}}
+gpt-5.4-low:
+  base_url: https://openrouter.ai/api/v1
+  model_id: openai/gpt-5.4
+  api_key_env: OPENROUTER_API_KEY
+  params: {max_tokens: 10000, extra_body: {reasoning: {effort: low}}}
