@@ -2,7 +2,7 @@
 
 Code for running vision-language models on the CoVerse benchmark and scoring what they say.
 
-The benchmark has 2,358 questions about images. The images come from four sources: flat 2D grids of characters
+The benchmark has 2,349 questions about images. The images come from four sources: flat 2D grids of characters
 (grid2d), rendered 3D characters (chars3d), ProcTHOR house interiors (procthor3d) and real indoor scans (ca1m3d).
 Every question is built from a small program, and the questions get harder as the program gets longer. Depth 1 asks
 one thing, while depth 3 chains several steps, like "find the chairs, keep the ones closer to the table than the
